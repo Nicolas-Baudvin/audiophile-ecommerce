@@ -33,6 +33,6 @@ module.exports = {
                 specialLink: ['hrefLeft', 'hrefRight'],
                 aspects: ['invalidHref', 'preferButton']
             }
-        ] // Use our .prettierrc file as source
+        ]
     }
 };
