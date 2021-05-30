@@ -1,0 +1,42 @@
+@import './vars.scss';
+
+.header {
+    position: fixed;
+    width: 100%;
+    max-width: 1440px;
+    background-color: #101010;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 0;
+    z-index: 10;
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        margin-right: 4rem;
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-family: $font-manrope;
+            font-weight: semi-bold;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: .2s ease-in-out;
+
+            &:hover {
+                color: $orange-hovered;
+            }
+        }
+    }
+
+    &-title {
+        cursor: pointer;
+    }
+
+    &-icon {
+        cursor: pointer;
+    }
+}

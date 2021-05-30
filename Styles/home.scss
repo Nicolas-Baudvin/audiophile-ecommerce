@@ -1,0 +1,68 @@
+@import './vars.scss';
+
+.home {
+    width: 100%;
+    height: 100;
+    &-landing {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 749px;
+        &-image {
+            position: absolute;
+            left: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            z-index: -1;
+        }
+
+        &-subtitle {
+            font-family: $font-manrope;
+            font-weight: 100;
+            letter-spacing: 10px;
+            font-size: 14px;
+            color: #f1f1f1;
+        }
+
+        &-title {
+            font-family: $font-manrope;
+            line-height: 58px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: $white;
+            font-size: 56px;
+        }
+
+        &-text {
+            font-family: $font-manrope;
+            font-weight: lighter;
+            font-size: 15px;
+            line-height: 25px;
+            color: #fff;
+            margin-bottom: 3rem;
+            max-width: 349px;
+        }
+
+        &-container {
+            position: relative;
+            top: 30%;
+            left: 10%;
+            max-width: 396px;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+            transition: .2s ease-in-out;
+            background-color: $orange;
+            color: #fff;
+            padding: .7rem 1.5rem;
+            font-family: $font-manrope;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 13px;
+            
+        }
+    }
+}
