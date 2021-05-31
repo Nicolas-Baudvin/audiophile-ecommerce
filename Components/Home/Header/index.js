@@ -14,18 +14,10 @@ const Header = () => {
                 />
             </Link>
             <nav className="header-nav">
-                <Link href="/" as="a">
-                    Home
-                </Link>
-                <Link href="/" as="a">
-                    Headphones
-                </Link>
-                <Link href="/" as="a">
-                    Speakers
-                </Link>
-                <Link href="/" as="a">
-                    Earphones
-                </Link>
+                <Link href="/">Home</Link>
+                <Link href="/headphones">Headphones</Link>
+                <Link href="/">Speakers</Link>
+                <Link href="/">Earphones</Link>
             </nav>
             <motion.div
                 whileHover={{ scale: 1.1 }}

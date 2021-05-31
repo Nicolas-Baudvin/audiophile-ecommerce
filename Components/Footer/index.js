@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link';
 import { AiFillFacebook, AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
 
@@ -19,7 +20,7 @@ const Footer = () => {
                     <Link href="/" as="a">
                         Home
                     </Link>
-                    <Link href="/" as="a">
+                    <Link href="/headphones" as="a">
                         Headphones
                     </Link>
                     <Link href="/" as="a">

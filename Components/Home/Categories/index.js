@@ -5,7 +5,7 @@ const CategoriesData = [
         src: '/img/shared/desktop/image-headphones.png',
         alt: 'headphones',
         title: 'headphones',
-        route: '/'
+        route: '/headphones'
     },
     {
         src: '/img/shared/desktop/image-speakers.png',
