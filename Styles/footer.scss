@@ -1,0 +1,69 @@
+@import './vars.scss';
+
+.footer {
+    display: flex;
+    align-items: center;
+    padding: 4rem 6rem;
+    justify-content: space-around;
+    background-color: #101010;
+
+    &-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-family: $font-manrope;
+        width: 540px;
+        img {
+            width: 143px;
+            height: 25px;
+        }
+
+        &-text {
+          font-size: 15px;
+          line-height: 25px;
+          font-weight: lighter;
+          color: #fff;  
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                margin: 0 1rem;
+                color: #fff;
+                transition: .2s ease-in-out;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 13px;
+                line-height: 25px;
+                letter-spacing: 2px;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        &-social {
+            display: flex;
+            width: max-content;
+            height: max-content;
+            align-self: flex-end;
+            padding-right: 3.5rem;
+            svg {
+                color: #fff;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+                font-size: 2rem;
+                align-self: flex-end;
+                margin: 5rem 5px 5rem 5px;
+                
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
