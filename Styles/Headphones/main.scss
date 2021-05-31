@@ -1,0 +1,26 @@
+@import '../vars.scss';
+
+.headphones {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-family:$font-manrope;
+
+    &-title {
+        margin: 5rem 0 0 0;
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: 1.43px;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        background-color: #101010;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 3rem 0;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+}
