@@ -2,6 +2,8 @@ import HomePage from '../Components/Home';
 import Header from '../Components/Home/Header';
 import Head from 'next//head';
 import SomeProducts from '../Components/Home/SomeProducts';
+import Desc from '../Components/Home/Desc';
+import Footer from '../Components/Footer';
 
 export default function Home() {
     return (
@@ -16,6 +18,8 @@ export default function Home() {
             <Header />
             <HomePage />
             <SomeProducts />
+            <Desc />
+            <Footer />
         </div>
     );
 }
