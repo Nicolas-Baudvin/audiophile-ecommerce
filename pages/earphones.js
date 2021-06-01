@@ -9,7 +9,7 @@ import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 
 const initialState = {
-    headphones: [],
+    earphones: [],
     loading: false
 };
 
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
         case 'GET_PRODUCTS': {
             return {
                 ...state,
-                headphones: action.payload,
+                earphones: action.payload,
                 loading: false
             };
         }
@@ -34,36 +34,36 @@ const reducer = (state, action) => {
     }
 };
 
-const getHeadphones = async (dispatch) => {
+const getEarphones = async (dispatch) => {
     try {
         const res = await axios({
             method: 'GET',
-            url: '/api/headphones'
+            url: '/api/earphones'
         });
-        dispatch({ type: 'GET_PRODUCTS', payload: res.data.headphones });
+        dispatch({ type: 'GET_PRODUCTS', payload: res.data.earphones });
     } catch (e) {
         console.log(e.response);
     }
 };
 
-const Headphones = () => {
+const Earphones = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     useEffect(() => {
         dispatch({ type: 'LOADING', payload: true });
-        getHeadphones(dispatch);
+        getEarphones(dispatch);
     }, []);
 
     useEffect(() => {
-        if (state.headphones.length) {
+        if (state.earphones.length) {
             dispatch({ type: 'LOADING', payload: false });
         }
-    }, [state.headphones]);
+    }, [state.earphones]);
     return state.loading ? (
         <LoadingPage />
     ) : (
         <div className="material">
             <Header />
-            <h1 className="material-title">Headphones</h1>
+            <h1 className="material-title">Earphones</h1>
             <Products state={state} />
             <Categories />
             <Desc />
@@ -72,4 +72,4 @@ const Headphones = () => {
     );
 };
 
-export default Headphones;
+export default Earphones;

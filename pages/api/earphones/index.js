@@ -1,33 +1,30 @@
-import dbConnect from '../../../utils/dbConnect';
-import Speakers from '../../../model/Speakers';
+import Earphones from '../../../model/Earphones';
 
-async function Index(req, res) {
-    await dbConnect();
+export default async function (req, res) {
     switch (req.method) {
         case 'GET': {
-            return getSpeakers();
+            return getEarphones();
         }
         case 'POST': {
-            return createSpeakers();
+            return createEarphones();
         }
         default:
-            return res.status(405).end(`Methode ${req.method} incorrecte`);
+            return res.status(405).end(`Method ${req.method} incorrect`);
     }
 
-    async function getSpeakers() {
+    async function getEarphones() {
         try {
-            const speakers = await Speakers.find();
-            return res.status(200).json({ speakers });
+            const earphones = await Earphones.find();
+            return res.status(200).json({ earphones });
         } catch (e) {
-            console.log(e);
             return res.status(500).json({ error: 'Une erreur est survenue sur le serveur' });
         }
     }
 
-    async function createSpeakers() {
+    async function createEarphones() {
         const { isNewProduct, name, desc, price, image } = req.body;
         try {
-            const newSpeaker = new Speakers({
+            const newEarphones = new Earphones({
                 isNewProduct,
                 name,
                 desc,
@@ -35,7 +32,7 @@ async function Index(req, res) {
                 image
             });
 
-            await newSpeaker.save();
+            await newEarphones.save();
 
             return res.status(200).json({ message: 'Le produit a été ajouté' });
         } catch (e) {
@@ -44,5 +41,3 @@ async function Index(req, res) {
         }
     }
 }
-
-export default Index;

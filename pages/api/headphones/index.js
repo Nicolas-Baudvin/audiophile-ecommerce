@@ -1,6 +1,5 @@
-import mongoose from 'mongoose';
 import dbConnect from '../../../utils/dbConnect';
-const Headphones = mongoose.model('Headphones');
+import Headphones from '../../../model/Headphones';
 
 export default async function headphones(req, res) {
     await dbConnect();
@@ -18,6 +17,7 @@ export default async function headphones(req, res) {
             const allHeadphones = await Headphones.find();
             return res.status(200).json({ headphones: allHeadphones });
         } catch (e) {
+            console.log(e);
             return res.status(500).json({ error: 'Une erreur est survenue sur le serveur' });
         }
     }
