@@ -1,10 +1,13 @@
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 
-const HeadphonesProducts = ({ state }) => {
+const Products = ({ state }) => {
+    const router = useRouter();
+    const categorie = router.pathname.split('/')[1];
     return (
         <div className="products">
-            {state.headphones.length > 0 &&
-                state.headphones.map((headphone, i) => (
+            {state[categorie].length > 0 &&
+                state[categorie].map((headphone, i) => (
                     <div key={i} className="products-item">
                         {i !== 1 && (
                             <img
@@ -36,11 +39,13 @@ const HeadphonesProducts = ({ state }) => {
     );
 };
 
-HeadphonesProducts.propTypes = {
+Products.propTypes = {
     state: PropTypes.shape({
-        headphones: PropTypes.array.isRequired,
-        loading: PropTypes.bool.isRequired
+        headphones: PropTypes.array,
+        loading: PropTypes.bool.isRequired,
+        speakers: PropTypes.array,
+        earphones: PropTypes.array
     })
 };
 
-export default HeadphonesProducts;
+export default Products;

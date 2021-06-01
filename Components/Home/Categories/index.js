@@ -11,13 +11,13 @@ const CategoriesData = [
         src: '/img/shared/desktop/image-speakers.png',
         alt: 'speakers',
         title: 'speakers',
-        route: '/'
+        route: '/speakers'
     },
     {
         src: '/img/shared/desktop/image-earphones.png',
         alt: 'earphones',
         title: 'earphones',
-        route: '/'
+        route: '/earphones'
     }
 ];
 
