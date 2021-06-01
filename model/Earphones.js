@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const HeadphonesSchema = new mongoose.Schema({
+const EarphonesSchema = new mongoose.Schema({
     isNewProduct: { type: Boolean, required: true },
     name: { type: String, required: true },
     desc: { type: String, required: true },
@@ -8,4 +8,4 @@ const HeadphonesSchema = new mongoose.Schema({
     price: { type: String, required: true }
 });
 
-export default mongoose.models.Headphones || mongoose.model('Headphones', HeadphonesSchema);
+export default mongoose.models.Earphones || mongoose.model('Earphones', EarphonesSchema);
