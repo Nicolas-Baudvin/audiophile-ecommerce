@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 
@@ -7,31 +8,23 @@ const Products = ({ state }) => {
     return (
         <div className="products">
             {state[categorie].length > 0 &&
-                state[categorie].map((headphone, i) => (
+                state[categorie].map((product, i) => (
                     <div key={i} className="products-item">
                         {i !== 1 && (
-                            <img
-                                src={headphone.image}
-                                alt={headphone.name}
-                                width={540}
-                                height={560}
-                            />
+                            <img src={product.image} alt={product.name} width={540} height={560} />
                         )}
                         <div className="products-item-text">
-                            {headphone.isNewProduct && (
+                            {product.isNewProduct && (
                                 <h3 className="products-item-new">new product</h3>
                             )}
-                            <h1 className="products-item-title"> {headphone.name} </h1>
-                            <p className="products-item-desc"> {headphone.desc} </p>
-                            <button className="products-item-button">See product</button>
+                            <h1 className="products-item-title"> {product.name} </h1>
+                            <p className="products-item-desc"> {product.desc} </p>
+                            <Link href={`/${categorie}/${product._id}`}>
+                                <button className="products-item-button">See product</button>
+                            </Link>
                         </div>
                         {i === 1 && (
-                            <img
-                                src={headphone.image}
-                                alt={headphone.name}
-                                width={540}
-                                height={560}
-                            />
+                            <img src={product.image} alt={product.name} width={540} height={560} />
                         )}
                     </div>
                 ))}
