@@ -1,15 +1,15 @@
-import Header from '../Components/Home/Header';
-import Footer from '../Components/Footer';
-import Desc from '../Components/Home/Desc';
-import Categories from '../Components/Home/Categories';
-import Products from '../Components/Products';
+import Header from '../../Components/Home/Header';
+import Footer from '../../Components/Footer';
+import Desc from '../../Components/Home/Desc';
+import Categories from '../../Components/Home/Categories';
+import Products from '../../Components/Products';
 
-import LoadingPage from '../Components/LoadingPage';
+import LoadingPage from '../../Components/LoadingPage';
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 
 const initialState = {
-    earphones: [],
+    headphones: [],
     loading: false
 };
 
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
         case 'GET_PRODUCTS': {
             return {
                 ...state,
-                earphones: action.payload,
+                headphones: action.payload,
                 loading: false
             };
         }
@@ -34,36 +34,36 @@ const reducer = (state, action) => {
     }
 };
 
-const getEarphones = async (dispatch) => {
+const getHeadphones = async (dispatch) => {
     try {
         const res = await axios({
             method: 'GET',
-            url: '/api/earphones'
+            url: '/api/headphones'
         });
-        dispatch({ type: 'GET_PRODUCTS', payload: res.data.earphones });
+        dispatch({ type: 'GET_PRODUCTS', payload: res.data.headphones });
     } catch (e) {
         console.log(e.response);
     }
 };
 
-const Earphones = () => {
+const Headphones = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     useEffect(() => {
         dispatch({ type: 'LOADING', payload: true });
-        getEarphones(dispatch);
+        getHeadphones(dispatch);
     }, []);
 
     useEffect(() => {
-        if (state.earphones.length) {
+        if (state.headphones.length) {
             dispatch({ type: 'LOADING', payload: false });
         }
-    }, [state.earphones]);
+    }, [state.headphones]);
     return state.loading ? (
         <LoadingPage />
     ) : (
         <div className="material">
             <Header />
-            <h1 className="material-title">Earphones</h1>
+            <h1 className="material-title">Headphones</h1>
             <Products state={state} />
             <Categories />
             <Desc />
@@ -72,4 +72,4 @@ const Earphones = () => {
     );
 };
 
-export default Earphones;
+export default Headphones;
