@@ -1,4 +1,4 @@
-@import '../vars.scss';
+@import "../vars.scss";
 
 .material {
     max-width: 1440px;
@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    font-family:$font-manrope;
+    font-family: $font-manrope;
 
     &-title {
         margin: 5rem 0 0 0;
@@ -31,7 +31,6 @@
     flex-direction: column;
     align-items: center;
     margin: 5rem auto;
-
 
     &-item {
         display: flex;
