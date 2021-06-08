@@ -1,0 +1,103 @@
+@import "./vars.scss";
+
+.product {
+    font-family: $font-manrope;
+    margin-top: 10rem;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-avert {
+        text-align: center;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    &-block {
+        display: flex;
+        align-items: center;
+
+        &--horizontal {
+            display: flex;
+            flex-direction: column;
+            max-width: 445px;
+            margin: 3rem;
+
+            img {
+                width: 349px;
+                height: 386px;
+            }
+        }
+    }
+
+    &-item {
+        &-isnew {
+            font-size: 14px;
+            letter-spacing: 10px;
+            color: $orange;
+            text-transform: uppercase;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            font-size: 40px;
+            letter-spacing: 1.43px;
+            line-height: 44px;
+            font-weight: bold;
+        }
+
+        &-desc {
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: lighter;
+            width: 445px;
+        }
+
+        &-price {
+            font-size: 18px;
+            letter-spacing: 1.29px;
+            font-weight: bold;
+        }
+
+        &-add {
+            text-transform: uppercase;
+            background-color: $orange;
+            color: $white;
+            letter-spacing: 1px;
+            padding: 1rem 1.7rem;
+            font-size: 13px;
+            border: none;
+            font-weight: lighter;
+        }
+
+        &-purshase {
+            display: flex;
+            align-items: center;
+        }
+
+        &-quantity {
+            margin: 3rem 1rem;
+            button {
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                font-size: 15px;
+                font-weight: lighter;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+                }
+            }
+            b {
+                font-weight: lighter;
+                width: 50px;
+                max-width: 50px;
+                margin: 0 1rem;
+            }
+        }
+    }
+}
