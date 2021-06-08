@@ -8,6 +8,7 @@ import '../Styles/Home/someproducts.scss';
 import '../Styles/Home/desc.scss';
 import '../Styles/Headphones/main.scss';
 import '../Styles/loading.scss';
+import '../Styles/product.scss';
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
