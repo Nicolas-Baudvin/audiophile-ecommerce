@@ -15,6 +15,7 @@ export default async function headphones(req, res) {
     async function getHeadphones() {
         try {
             const allHeadphones = await Headphones.find();
+            console.log(allHeadphones);
             return res.status(200).json({ headphones: allHeadphones });
         } catch (e) {
             console.log(e);
@@ -23,7 +24,7 @@ export default async function headphones(req, res) {
     }
 
     async function createHeadphones() {
-        const { name, isNewProduct, desc, image, price } = req.body;
+        const { name, isNewProduct, desc, image, price, features, inTheBox } = req.body;
 
         try {
             const newHeadphones = new Headphones({
@@ -31,7 +32,9 @@ export default async function headphones(req, res) {
                 isNewProduct,
                 desc,
                 image,
-                price
+                price,
+                features,
+                inTheBox
             });
 
             await newHeadphones.save();

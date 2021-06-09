@@ -22,14 +22,16 @@ export default async function (req, res) {
     }
 
     async function createEarphones() {
-        const { isNewProduct, name, desc, price, image } = req.body;
+        const { isNewProduct, name, desc, price, image, features, inTheBox } = req.body;
         try {
             const newEarphones = new Earphones({
                 isNewProduct,
                 name,
                 desc,
                 price,
-                image
+                image,
+                features,
+                inTheBox
             });
 
             await newEarphones.save();

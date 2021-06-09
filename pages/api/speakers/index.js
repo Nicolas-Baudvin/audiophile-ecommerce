@@ -25,14 +25,16 @@ async function Index(req, res) {
     }
 
     async function createSpeakers() {
-        const { isNewProduct, name, desc, price, image } = req.body;
+        const { isNewProduct, name, desc, price, image, features, inTheBox } = req.body;
         try {
             const newSpeaker = new Speakers({
                 isNewProduct,
                 name,
                 desc,
                 price,
-                image
+                image,
+                features,
+                inTheBox
             });
 
             await newSpeaker.save();

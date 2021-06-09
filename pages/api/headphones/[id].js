@@ -5,6 +5,9 @@ const handler = (req, res) => {
         case 'GET': {
             return getProductById();
         }
+        case 'PATCH': {
+            return patchProductById();
+        }
         default: {
             return res.status(405).end(`Method ${req.method} incorrect`);
         }
@@ -21,6 +24,10 @@ const handler = (req, res) => {
         } catch (e) {
             return res.status(500).json({ error: 'Une erreur est survenue sur le serveur' });
         }
+    }
+
+    async function patchProductById() {
+        return res.status(200);
     }
 };
 
