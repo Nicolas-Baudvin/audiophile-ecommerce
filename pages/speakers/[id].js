@@ -24,10 +24,10 @@ const initialState = {
     product: false
 };
 
-const getHeadphoneProduct = async (params, dispatch) => {
+const getSpeakerProduct = async (params, dispatch) => {
     try {
         const res = await axios({
-            url: `/api/headphones/${params.id}`,
+            url: `/api/speakers/${params.id}`,
             method: 'GET'
         });
         dispatch({ type: 'GET_PRODUCT', payload: res.data.product || false });
@@ -37,13 +37,13 @@ const getHeadphoneProduct = async (params, dispatch) => {
     }
 };
 
-const Headphone = () => {
+const Speaker = () => {
     const router = useRouter();
     const params = router.query;
     const [state, dispatch] = useReducer(reducer, initialState);
-    useEffect(() => {
+    useEffect(async () => {
         if (params.id) {
-            getHeadphoneProduct(params, dispatch);
+            getSpeakerProduct(params, dispatch);
         }
     }, [params.id]);
     return (
@@ -56,4 +56,4 @@ const Headphone = () => {
     );
 };
 
-export default Headphone;
+export default Speaker;
