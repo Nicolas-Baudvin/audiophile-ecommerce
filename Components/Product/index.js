@@ -41,8 +41,26 @@ const Product = ({ state }) => {
                         </div>
                     </div>
                     <div className="product-block">
-                        <div className="product-block--horizontal"></div>
-                        <div className="product-block--horizontal"></div>
+                        <div className="product-block--aside">
+                            <h1 className="product-features-title">features</h1>
+                            <p className="product-features-desc">
+                                {' '}
+                                {product.features.split('//')[0]}{' '}
+                            </p>
+                            <p className="product-features-desc">
+                                {product.features.split('//')[1]}
+                            </p>
+                        </div>
+                        <div className="product-block--aside">
+                            <h1 className="product-features-title">in the box</h1>
+                            <ul className="product-features-list">
+                                {product.inTheBox.map((item, i) => (
+                                    <li key={i}>
+                                        <span>x{item.qty}</span> {item.name}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             )}
@@ -60,6 +78,8 @@ Product.propTypes = {
                 image: PropTypes.string.isRequired,
                 isNewProduct: PropTypes.bool.isRequired,
                 price: PropTypes.number.isRequired,
+                features: PropTypes.string.isRequired,
+                inTheBox: PropTypes.array.isRequired,
                 _id: PropTypes.string.isRequired
             })
         ])
