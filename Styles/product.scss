@@ -4,6 +4,44 @@
     font-family: $font-manrope;
     margin-top: 10rem;
 
+    &-features {
+        &-desc {
+            width: 635px;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: lighter;
+        }
+        &-title {
+            font-size: 32px;
+            letter-spacing: 1.14px;
+            line-height: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &-list {
+            width: 350px;
+            padding: 0;
+            margin: 0;
+            li {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                display: flex;
+                font-size: 15px;
+                line-height: 25px;
+                font-weight: lighter;
+                span {
+                    color: $orange;
+                    font-weight: bold;
+                    margin: 0 2rem 0 0;
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+
     &-container {
         display: flex;
         flex-direction: column;
@@ -18,7 +56,6 @@
 
     &-block {
         display: flex;
-        align-items: center;
 
         &--horizontal {
             display: flex;
@@ -30,6 +67,12 @@
                 width: 349px;
                 height: 386px;
             }
+        }
+
+        &--aside {
+            display: flex;
+            flex-direction: column;
+            margin: 0 5rem;
         }
     }
 
@@ -71,6 +114,12 @@
             font-size: 13px;
             border: none;
             font-weight: lighter;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $orange-hovered;
+            }
         }
 
         &-purshase {
