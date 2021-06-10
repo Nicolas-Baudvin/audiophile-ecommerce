@@ -1,4 +1,4 @@
-@import './vars.scss';
+@import "./vars.scss";
 
 .header {
     position: fixed;
@@ -24,7 +24,7 @@
             font-size: 17px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: .2s ease-in-out;
+            transition: 0.2s ease-in-out;
 
             &:hover {
                 color: $orange-hovered;
@@ -38,5 +38,142 @@
 
     &-icon {
         cursor: pointer;
+    }
+}
+
+.cart {
+    display: none;
+    position: fixed;
+    width: 377px;
+    z-index: 500;
+    top: 5rem;
+    right: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    font-family: $font-manrope;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-weight: lighter;
+            font-size: 15px;
+            line-height: 25px;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+        h1 {
+            font-size: 18px;
+            letter-spacing: 1.29px;
+            font-weight: bold;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+        &__item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            margin: 1rem 0;
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-name {
+                font-size: 15px;
+                line-height: 25px;
+                font-weight: bold;
+            }
+
+            &-price {
+                font-size: 14px;
+                line-height: 25px;
+                font-weight: bold;
+            }
+
+            button {
+                border: none;
+                margin: 0 0.5rem;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+
+            &-qty {
+                font-weight: lighter;
+            }
+        }
+    }
+
+    &-footer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &-close {
+            border: none;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin: 1rem 0 0 0;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: 15px;
+                line-height: 25px;
+                font-weight: lighter;
+            }
+        }
+        &-confirm {
+            text-transform: uppercase;
+            background-color: $orange;
+            color: $white;
+            letter-spacing: 1px;
+            padding: 1rem 1.7rem;
+            font-size: 13px;
+            border: none;
+            font-weight: lighter;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $orange-hovered;
+            }
+        }
+    }
+    img {
+        width: 64px;
+        height: 64px;
     }
 }
